@@ -1,31 +1,52 @@
 import React from "react";
-import CytoscapeComponent from 'react-cytoscapejs';
+import CytoscapeComponent from "react-cytoscapejs";
+import Cytoscape from 'cytoscape';
+import COSEBilkent from 'cytoscape-cose-bilkent';
 
-export default function AppGraph({  }) {
-  const elements = [
-    { data: { id: 'one', label: 'Node 1' } },
-    { data: { id: 'two', label: 'Node 2' } },
-    { data: { source: 'one', target: 'two', label: 'Edge from Node1 to Node2' } }
-  ];
+import graphData from "./data.json";
 
+Cytoscape.use(COSEBilkent);
+
+export default function AppGraph({}) {
+  const elements = [...graphData.nodes, ...graphData.edges].map((d) => ({
+    data: d,
+  }));
+
+  console.log(JSON.stringify(elements, null, 2));
 
   return (
-    <div 
-      className="app-graph" 
-      style={{ 
+    <div
+      className="app-graph"
+      style={{
         width: "100%",
-        height: "100%",
+        height: "95%",
         overflow: "hidden",
       }}
     >
-      <CytoscapeComponent 
-        elements={elements} 
-        style={{ 
-          width: '100%', 
-          height: '100%' 
+      <CytoscapeComponent
+        elements={elements}
+        style={{
+          width: "100%",
+          height: "100%",
         }}
         layout={{
-          name: 'grid',
+          name: "cose-bilkent",
+        }}
+        stylesheet={[
+          {
+            selector: "node",
+            style: {
+              label: e => `${e.data("type")}: ${e.data("label")}`,
+            },
+          },
+          {
+            selector: "edge",
+            style: {
+              label: "data(type)",
+            },
+          },
+        ]}
+        cy={cy => {
         }}
       />
     </div>

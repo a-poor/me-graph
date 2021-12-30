@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "id": "person-tim",
+      "label": "Tim",
+      "type": "Person"
+    },
+    {
+      "id": "person-sal",
+      "label": "Sal",
+      "type": "Person"
+    },
+    {
+      "id": "person-beth",
+      "label": "Beth",
+      "type": "Person"
+    },
+    {
+      "id": "company-cvs",
+      "label": "CVS",
+      "type": "Company"
+    }
+  ],
+  "edges": [
+    {
+      "source": "person-tim",
+      "target": "person-sal",
+      "type": ":KNOWS"
+    },
+    {
+      "source": "person-tim",
+      "target": "person-beth",
+      "type": ":KNOWS"
+    },
+    {
+      "source": "person-tim",
+      "target": "company-cvs",
+      "type": ":WORKS_AT"
+    },
+    {
+      "source": "person-beth",
+      "target": "company-cvs",
+      "type": ":WORKS_AT"
+    }
+  ]
+}

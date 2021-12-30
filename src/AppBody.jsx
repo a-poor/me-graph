@@ -21,6 +21,8 @@ export default function AppBody({}) {
         style={{
           height: "100%",
         }}
+        sizes={[85, 15]}
+        dragInterval={20}
       >
         <AppGraph />
         <AppDetails />
