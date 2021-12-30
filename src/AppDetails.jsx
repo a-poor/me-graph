@@ -5,41 +5,10 @@ import Typography from "@mui/material/Typography";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
+import GraphLegend from "./GraphLegend";
+import GraphDetails from "./GraphDetails";
+import GraphFilters from "./GraphFilters";
 
-/**
- * A table of user-defined filters to apply to the graph.
- * For example: "only show person nodes with the name 'John'".
- * 
- * Filter by: Node/Edge type, or Node/Edge attribute.
- * 
- */
- function GraphLegend({ }) {
-  return (
-    <p>I'm the graph legend!</p>
-  );
-}
-
-/**
- * A table of user-defined filters to apply to the graph.
- * For example: "only show person nodes with the name 'John'".
- * 
- * Filter by: Node/Edge type, or Node/Edge attribute.
- * 
- */
-function GraphFilters({ }) {
-  return (
-    <p>I'm the graph filters!</p>
-  );
-}
-
-/**
- * Displays the attributes of a selected node or edge.
- */
- function GraphDetails({ }) {
-  return (
-    <p>I'm the graph details!</p>
-  );
-}
 
 export default function AppDetails({}) {
   const [activeTab, setActiveTab] = React.useState(0);
