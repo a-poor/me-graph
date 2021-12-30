@@ -12,17 +12,16 @@ export default function AppGraph({}) {
     data: d,
   }));
 
-  console.log(JSON.stringify(elements, null, 2));
-
   return (
     <div
       className="app-graph"
       style={{
         width: "100%",
-        height: "95%",
+        height: "100%",
         overflow: "hidden",
       }}
     >
+      <div style={{ height: "68px", }}/>
       <CytoscapeComponent
         elements={elements}
         style={{

@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      {/* <div style={{ height: "69px", }}/> */}
       <AppBody />
     </div>
   );
