@@ -1,4 +1,4 @@
-resume:
+graphData:
   experience:
   - type: Experience
 
@@ -9,27 +9,53 @@ resume:
   - type: Project
 
   blogPosts:
-  - type: Blog Post
+  - type: Blog_Post
 
-nodeTypes:
-- name: Person
-- name: Company
-- name: School
-- name: Project
-- name: Blog Post
+graphModel:
+  nodeTypes:
+  - name: Person
+    attrs:
+    - "name"
+    - "location"
+  - name: Company
+    attrs:
+    - "name"
+    - "location"
+    - "website" #?
+  - name: School
+    attrs:
+    - "name"
+    - "location"
+    - "website" #?
+  - name: Project
+    attrs:
+    - "title"
+    - "link"
+  - name: Blog_Post
+    attrs:
+    - "title"
+    - "link"
 
-edgeTypes:
-- name: Worked At
-  source: Person
-  target: Company
-  attrs:
-  - "title"
-  - "startDate"
-  - "endDate"
-- name: Attended
-  source: Person
-  target: School
-  attrs:
-  - "title"
-  - "startDate"
-  - "endDate"
+  edgeTypes:
+  - name: Employee_At
+    source: Person
+    target: Company
+    attrs:
+    - "title"
+    - "startDate"
+    - "endDate"
+  - name: Attended
+    source: Person
+    target: School
+    attrs:
+    - "degree"
+    - "startDate"
+    - "endDate"
+  - name: Created
+    source: Person
+    target: Project
+    attrs: []
+  - name: Wrote
+    source: Person
+    target: Blog_Post
+    attrs: []
