@@ -31,6 +31,8 @@ export default function AppGraph({}) {
         }}
         layout={{
           name: "cose-bilkent",
+          padding: 20,
+          idealEdgeLength: 150,
         }}
         stylesheet={[
           {

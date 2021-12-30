@@ -1,46 +1,51 @@
 {
   "nodes": [
     {
-      "id": "person-tim",
-      "label": "Tim",
+      "id": "person-me",
+      "label": "Me",
       "type": "Person"
     },
     {
-      "id": "person-sal",
-      "label": "Sal",
-      "type": "Person"
-    },
-    {
-      "id": "person-beth",
-      "label": "Beth",
-      "type": "Person"
-    },
-    {
-      "id": "company-cvs",
-      "label": "CVS",
+      "id": "company-chrlx",
+      "label": "CHRLX",
       "type": "Company"
+    },
+    {
+      "id": "company-commandcredit",
+      "label": "Command Credit",
+      "type": "Company"
+    },
+    {
+      "id": "school-slc",
+      "label": "Sarah Lawrence College",
+      "type": "School"
+    },
+    {
+      "id": "school-metis",
+      "label": "Metis",
+      "type": "School"
     }
   ],
   "edges": [
     {
-      "source": "person-tim",
-      "target": "person-sal",
-      "type": ":KNOWS"
+      "source": "person-me",
+      "target": "company-chrlx",
+      "type": ":EMPLOYEE_AT"
     },
     {
-      "source": "person-tim",
-      "target": "person-beth",
-      "type": ":KNOWS"
+      "source": "person-me",
+      "target": "company-commandcredit",
+      "type": ":EMPLOYEE_AT"
     },
     {
-      "source": "person-tim",
-      "target": "company-cvs",
-      "type": ":WORKS_AT"
+      "source": "person-me",
+      "target": "school-slc",
+      "type": ":STUDIED_AT"
     },
     {
-      "source": "person-beth",
-      "target": "company-cvs",
-      "type": ":WORKS_AT"
+      "source": "person-me",
+      "target": "school-metis",
+      "type": ":STUDIED_AT"
     }
   ]
 }

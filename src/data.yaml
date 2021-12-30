@@ -1,0 +1,35 @@
+resume:
+  experience:
+  - type: Experience
+
+  education:
+  - type: Education
+
+  projects:
+  - type: Project
+
+  blogPosts:
+  - type: Blog Post
+
+nodeTypes:
+- name: Person
+- name: Company
+- name: School
+- name: Project
+- name: Blog Post
+
+edgeTypes:
+- name: Worked At
+  source: Person
+  target: Company
+  attrs:
+  - "title"
+  - "startDate"
+  - "endDate"
+- name: Attended
+  source: Person
+  target: School
+  attrs:
+  - "title"
+  - "startDate"
+  - "endDate"
